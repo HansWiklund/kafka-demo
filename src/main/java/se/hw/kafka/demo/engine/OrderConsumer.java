@@ -25,7 +25,7 @@ public class OrderConsumer {
     @KafkaListener(topics = "order")
     public void consume(@Payload Order data,
                         @Headers MessageHeaders headers) {
-        logger.info("received data='{}'", data);
+        logger.info("received data='{}'", data.getId());
 
         headers.keySet().forEach(key -> {
             logger.info("{}: {}", key, headers.get(key));
