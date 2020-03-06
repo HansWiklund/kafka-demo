@@ -1,14 +1,21 @@
 # kafka-demo
-trying to learn Apache Kafka
+Trying to learn Apache Kafka using Spring Boot.
 
+Contains
+* Kafka producer
+* Kafka consumer
+* Rest controller and rest client (webflux)
+* JUnit tests using embedded Kafka.
+
+## Starting kafka on Windows
 Start a command window.
 
 Go to kafka folder.
 
 Start cmd:
 
-bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+C:\somepath\kafka> bin\windows\zookeeper-server-start.bat config\zookeeper.properties
 
 Start new cmd:
 
-bin\windows\kafka-server-start.bat config\server.properties
+C:\somepath\kafka> bin\windows\kafka-server-start.bat config\server.properties
