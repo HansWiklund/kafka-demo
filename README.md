@@ -1,6 +1,12 @@
 # kafka-demo
 Trying to learn Apache Kafka using Spring Boot.
 
+Contains
+* Kafka producer
+* Kafka consumer
+* Rest controller and rest client (webflux)
+* JUnit tests using embedded Kafka.
+
 ## Starting kafka
 Start a command window.
 
