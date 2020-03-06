@@ -7,7 +7,7 @@ Contains
 * Rest controller and rest client (webflux)
 * JUnit tests using embedded Kafka.
 
-## Starting kafka
+## Starting kafka on Windows
 Start a command window.
 
 Go to kafka folder.
