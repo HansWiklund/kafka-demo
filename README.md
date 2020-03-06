@@ -1,5 +1,5 @@
 # kafka-demo
-Trying to learn Apache Kafka.
+Trying to learn Apache Kafka using Spring Boot.
 
 ## Starting kafka
 Start a command window.
