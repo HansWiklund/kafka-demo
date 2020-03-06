@@ -16,15 +16,18 @@ import java.io.IOException;
 public class OrderConsumer {
 
     private final Logger logger = LoggerFactory.getLogger(OrderConsumer.class);
-
-    @KafkaListener(topics = "users", groupId = "group_id")
-    public void consume(String message) throws IOException {
-        logger.info(String.format("#### -> Consumed message -> %s", message));
-    }
+    private String latestId;
     
-    @KafkaListener(topics = "order")
+    public String getLatestId() {
+		return latestId;
+	}
+
+	@KafkaListener(topics = "order")
     public void consume(@Payload Order data,
                         @Headers MessageHeaders headers) {
+		
+		latestId=data.getId();
+		
         logger.info("received data='{}'", data.getId());
 
         headers.keySet().forEach(key -> {
