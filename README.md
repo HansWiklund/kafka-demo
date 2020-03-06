@@ -1,6 +1,7 @@
 # kafka-demo
-trying to learn Apache Kafka
+Trying to learn Apache Kafka.
 
+# Starting kafka
 Start a command window.
 
 Go to kafka folder.
