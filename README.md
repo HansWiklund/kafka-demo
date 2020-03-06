@@ -8,8 +8,8 @@ Go to kafka folder.
 
 Start cmd:
 
-bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+C:\somepath\kafka> bin\windows\zookeeper-server-start.bat config\zookeeper.properties
 
 Start new cmd:
 
-bin\windows\kafka-server-start.bat config\server.properties
+C:\somepath\kafka> bin\windows\kafka-server-start.bat config\server.properties
