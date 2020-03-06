@@ -3,14 +3,13 @@ package se.hw.kafka.demo.engine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
 import se.hw.kafka.demo.model.Order;
-
-import java.io.IOException;
 
 @Service
 public class OrderConsumer {
@@ -26,9 +25,9 @@ public class OrderConsumer {
     public void consume(@Payload Order data,
                         @Headers MessageHeaders headers) {
 		
-		latestId=data.getId();
+		latestId=(String) headers.get(KafkaHeaders.RECEIVED_MESSAGE_KEY);
 		
-        logger.info("received data='{}'", data.getId());
+        logger.info("received data='{}'", latestId);
 
         headers.keySet().forEach(key -> {
             logger.info("{}: {}", key, headers.get(key));

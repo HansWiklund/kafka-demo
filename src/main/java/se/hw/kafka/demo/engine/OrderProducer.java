@@ -29,6 +29,8 @@ public class OrderProducer {
         Message<Order> message = MessageBuilder
                 .withPayload(order)
                 .setHeader(KafkaHeaders.TOPIC, TOPIC)
+                .setHeader(KafkaHeaders.MESSAGE_KEY, order.getId())
+                .setHeader("X-NR-OF-ITEMS", order.getItems().size())
                 .build();
  
         kafkaTemplate.send(message);

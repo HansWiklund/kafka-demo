@@ -24,7 +24,7 @@ public class RestClient {
  
 	WebClient webClient;
 
-	// @PostConstruct will not work here since local.server.port has not been assigned
+	// @PostConstruct will not work here since local.server.port has not been assigned yet.
 	private void initClient() {
 		
 		if("0".equals(port))
